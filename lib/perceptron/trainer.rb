@@ -30,7 +30,7 @@ class Trainer
   private
 
   ##
-  # Read from the file, converting the comma seperated values into integers, and
+  # Read from a properly formatted file, converting the comma seperated values into integers, and
   # storing them in the class variables
   def read filename
     # Open file, Read in and process data.
