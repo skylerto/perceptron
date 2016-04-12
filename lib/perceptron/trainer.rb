@@ -46,7 +46,11 @@ class Trainer
       puts "Sum: #{sum}"
 
       local_error = @output[i] - out
-      #puts "Local Error: #{local_error}"
+      if local_error == 0
+        local_error == 0.0001
+      end
+
+      puts "Local Error: #{local_error}"
 
       @weights[0] += learning_rate * local_error * @x[i]
       @weights[1] += learning_rate * local_error * @y[i]
@@ -54,7 +58,7 @@ class Trainer
       i = i + 1
 
       global_error += local_error * local_error
-      #puts "Global Error : #{global_error}"
+      puts "Global Error : #{global_error}"
 
     end while (global_error != 0 && i < @output.size)
 
