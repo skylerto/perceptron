@@ -24,11 +24,13 @@ the perceptron with the default data or your own data.
 To train a perceptron run `Perceptron.train xyz` where xyz is the path to the
 file, or if no file is given it trains it with the data from `data/x_train.txt`. For a
 specification of what a training file should look like please output the look at
-[input guidelines](doc/input_guidelines.md).  
+[input guidelines](doc/input_guidelines.md). This returns a trained perceptron
+which can be used for classification.  
 
 To classify a specific coordinate using your trained perceptron, run
-`Perceptron.classify p, x, y` where p is your trained perceptron, x is the desired x coordinate and y is the
-desired y coordinate in the classification.  
+`Perceptron.classify p, x, y` where p is your trained perceptron (if none is given it
+uses the last trained perceptron), x is the desired  x coordinate and y is the desired
+y coordinate in the classification.  
 
 ## Contributing
 

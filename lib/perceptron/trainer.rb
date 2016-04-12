@@ -11,15 +11,19 @@ class Trainer
 
   ##
   # Initialize the x, y, output as new arrays.
+  #
+  # Initialize weights (weight_x, weight_y, bias) as close to 0 as possible.
   def initialize
     @x = Array.new
     @y = Array.new
     @output = Array.new
-    @weights = [0.01,0.01,0.01]
+    @weights = [0.0001,0.0001,0.0001]
   end
 
   ##
-  # Train the perceptron.
+  # Train the perceptron with the desired training file.
+  #
+  # filename - path to a file to train the perceptron with.
   def train filename="data/x_train.txt"
 
     # Read from the file if we haven't already
@@ -54,9 +58,8 @@ class Trainer
 
     end while (global_error != 0 && i < @output.size)
 
-    puts "DBE: #{@weights[0]}x + #{@weights[1]} +- #{@weights[2]}"
-
-
+    puts "Decision Boundary Equation: #{@weights[0]}x + #{@weights[1]} +- #{@weights[2]}"
+    @weights
   end
 
   private
