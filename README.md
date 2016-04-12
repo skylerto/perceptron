@@ -18,7 +18,7 @@ And then execute:
 
 ## Usage
 
-To use this rub `bin/console` to pop an interactive prompt where you can train
+To use this run `bin/console` to pop an interactive prompt where you can train
 the perceptron with the default data or your own data.  
 
 To train a perceptron run `Perceptron.train xyz` where xyz is the path to the
