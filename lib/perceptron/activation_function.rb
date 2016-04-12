@@ -15,7 +15,8 @@ module ActivationFunction
   # y - a y coordinate
   #
   def ActivationFunction.weighted_sum weights=nil, x=nil, y=nil
-    if weights.nil? && x.nil? && y.nil?
+    if weights.nil? || x.nil? || y.nil?
+      puts "w: #{weights}, x: #{x}, y: #{y}"
       raise Exception
     elsif weights.size != 3
       raise Exception

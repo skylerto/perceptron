@@ -27,7 +27,7 @@ specification of what a training file should look like please output the look at
 [input guidelines](doc/input_guidelines.md).  
 
 To classify a specific coordinate using your trained perceptron, run
-`Perceptron.classify x, y` where x is the desired x coordinate and y is the
+`Perceptron.classify p, x, y` where p is your trained perceptron, x is the desired x coordinate and y is the
 desired y coordinate in the classification.  
 
 ## Contributing

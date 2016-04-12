@@ -7,6 +7,7 @@ class Trainer
   attr_accessor :x
   attr_accessor :y
   attr_accessor :output
+  attr_accessor :weights
 
   ##
   # Initialize the x, y, output as new arrays.
@@ -14,6 +15,7 @@ class Trainer
     @x = Array.new
     @y = Array.new
     @output = Array.new
+    @weights = [0.01,0.01,0.01]
   end
 
   ##
@@ -24,6 +26,36 @@ class Trainer
     if @x.empty? && @y.empty? && @output.empty?
       read filename
     end
+
+    i = 0 # Keep track of the iterations
+    learning_rate = 0.1
+    global_error = 0
+    local_error = 0
+    theta = 0
+
+    begin
+      sum = ActivationFunction.weighted_sum @weights, @x[i], @y[i]
+      out = 0
+      if sum >= theta
+        out = 1
+      end
+      puts "Sum: #{sum}"
+
+      local_error = @output[i] - out
+      #puts "Local Error: #{local_error}"
+
+      @weights[0] += learning_rate * local_error * @x[i]
+      @weights[1] += learning_rate * local_error * @y[i]
+      @weights[2] += learning_rate * local_error
+      i = i + 1
+
+      global_error += local_error * local_error
+      #puts "Global Error : #{global_error}"
+
+    end while (global_error != 0 && i < @output.size)
+
+    puts "DBE: #{@weights[0]}x + #{@weights[1]} +- #{@weights[2]}"
+
 
   end
 
