@@ -1,34 +1,34 @@
 # Perceptron
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/perceptron`. To experiment with that code, run `bin/console` for an interactive prompt.
+This is a perceptron implementation in ruby, the perceptron classifies 2
+dimensional linear functions.  
 
-TODO: Delete this and the text above, and describe your gem
+It's written in a gem structure however it's not available on rubygems.
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'perceptron'
+```
+$ git clone https://github.com/skylerto/perceptron.git
+$ cd perceptron
 ```
 
 And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install perceptron
-
 ## Usage
 
-TODO: Write usage instructions here
+To use this rub `bin/console` to pop an interactive prompt where you can train
+the perceptron with the default data or your own data.  
 
-## Development
+To train a perceptron run `Perceptron.train xyz` where xyz is the path to the
+file, or if no file is given it trains it with the data from `data/x_train.txt`. For a
+specification of what a training file should look like please output the look at
+[input guidelines](doc/input_guidelines.md).  
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+To classify a specific coordinate using your trained perceptron, run
+`Perceptron.classify x, y` where x is the desired x coordinate and y is the
+desired y coordinate in the classification.  
 
 ## Contributing
 
@@ -36,6 +36,8 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[USERN
 
 
 ## Modules
+
+Modules are designed as to be easily extendable. 
 
 ### ActivationFunction
 
